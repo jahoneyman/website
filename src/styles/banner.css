@@ -1,0 +1,36 @@
+.radial {
+  height: 120vh;
+  background: radial-gradient(circle at -100% -100%, #c02d74, rgba(0, 0, 0, 0.1) 80.71%),
+    radial-gradient(circle at 300% 75%, #ef0f21, rgba(0, 0, 0, 0.1) 80.71%),
+    radial-gradient(circle at 50% 200%, #f85801, rgba(0, 0, 0, 0.1) 80.71%), black;
+}
+
+.welcome {
+  background: radial-gradient(circle at -200% -200%, #f53d00, rgba(0, 0, 0, 0.1) 80.71%),
+    radial-gradient(circle at right 500%, #9c4cbf, rgba(0, 0, 0, 0.1) 80.71%),
+    radial-gradient(circle at 50% 300%, #f7b103, rgba(0, 0, 0, 0.5) 80.71%);
+}
+
+.connect-parent:hover i {
+  background: white;
+  color: #7c38af;
+}
+
+.connect-link::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 4px;
+  background: linear-gradient(to right, #7c38af, #f85801);
+  bottom: 0;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.connect-link:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}

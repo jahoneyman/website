@@ -1,0 +1,5 @@
+.about {
+  background: radial-gradient(circle at -100% -100%, #c02d74, rgba(0, 0, 0, 0.1) 80.71%),
+    radial-gradient(circle at 300% 75%, #ef0f21, rgba(0, 0, 0, 0.1) 80.71%),
+    radial-gradient(circle at 50% -100%, #f85801, rgba(0, 0, 0, 0.1) 80.71%), black;
+}
