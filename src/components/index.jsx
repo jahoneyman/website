@@ -8,3 +8,4 @@ export { default as Navbar } from "./Navbar";
 export { default as Skills } from "./Skills";
 export { default as Project } from "./Project";
 export { default as SectionTitle } from "./SectionTitle";
+export { default as Modal } from "./Modal";

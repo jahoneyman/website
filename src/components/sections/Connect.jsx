@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
+import Axios from "axios";
 
 import { SectionTitle } from "..";
 import "../../styles/connect.css";
@@ -15,8 +16,21 @@ const Connect = () => {
 
   const [sent, setSent] = useState(false);
 
+  const addMessage = (data) => {
+    Axios.post("http://localhost:3001/create", {
+      firstName: data.firstName,
+      lastName: data.lastName,
+      email: data.email,
+      phone: data.phone,
+      message: data.message,
+    }).then((response) => {
+      console.log("success");
+    });
+  };
+
   const onSubmit = (data) => {
     console.log(data);
+    addMessage(data);
     setSent(true);
     setTimeout(() => setSent(false), 5000);
     reset();
@@ -114,8 +128,6 @@ const Connect = () => {
           className="mx-auto pt-5 pb-10 pl-5 w-full rounded-lg bg-transparent-white-05 border-3 text-white placeholder:text-transparent-white-07 resize-none mb-1"
           {...register("message", {
             required: "Please enter message",
-            pattern: /^[A-Za-z]+$/i,
-            maxLength: 30,
           })}
           placeholder="Message"
         />

@@ -93,7 +93,7 @@ const Navbar = () => {
     <nav
       className={`fixed z-50 justify-between items-center px-16 w-full text-white text-xl xs:text-2xl desktop:text-4xl desktop:px-36 transition-all ease-in duration-300 ${
         open ? "bg-black" : "flex"
-      } ${stickyNav ? "py-4 bg-dark-gray" : "py-6"} ${hideNav && "py-0 opacity-0"} `}
+      } ${stickyNav ? "py-4 bg-dark-gray" : "py-6"} ${hideNav && "py-0 opacity-0 cursor-default"} `}
     >
       <div className="flex justify-between w-full">
         <Link to="/" className="font-extrabold">
