@@ -3,6 +3,8 @@ const app = express();
 const mysql = require("mysql");
 const cors = require("cors");
 
+const port = process.env.PORT || 5000;
+
 app.use(cors());
 app.use(express.json());
 
@@ -12,6 +14,8 @@ const db = mysql.createConnection({
   password: "2018-08000",
   database: "portfolio",
 });
+
+app.get("/", (req, res) => res.send("Welcome to our API service"));
 
 app.post("/create", (req, res) => {
   console.log(req.body);
@@ -44,6 +48,6 @@ app.get("/projects", (req, res) => {
   });
 });
 
-app.listen(3001, () => {
-  console.log("Server is running on http://localhost:3001/");
+app.listen(port, () => {
+  console.log(`Server is listening to port: ${port}`);
 });
