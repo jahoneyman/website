@@ -36,10 +36,10 @@ const About = () => {
       <div className="text-2xl w-2/3 font-bold">About Me</div>
       <div className="w-full md:w-4/6 mt-8">
         <div className="py-1">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint molestiae iste cum sapiente
-          ex sed doloribus natus sunt eligendi expedita voluptate rerum sit ea autem nisi qui vero
-          in fugiat, dignissimos nemo numquam. Dicta adipisci eaque ex dignissimos tempore quidem
-          vel eveniet est, corporis natus unde tempora fuga, repellat similique?
+          Hey there! I am John Honeyman, a fresh graduate in the University of the Philippines,
+          Visayas. My interest in web development started in 2018 when I entered college. I aim to
+          become an aspiring full stack web developer where I can help small businesses reach their
+          dreams of becoming bigger in the future.
         </div>
       </div>
       <div className="w-full md:w-4/6 mt-5">

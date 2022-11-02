@@ -1,39 +1,6 @@
 import { Project, SectionTitle } from "..";
 import data from "../../data";
 
-// const projects = [
-//   {
-//     projectname: "A",
-//     previewPhotos: ["Photo one", "Photo two", "Photo three"],
-//     technologiesUsed: ["HTML", "CSS", "Javascript"],
-//   },
-//   {
-//     projectname: "B",
-//     previewPhotos: ["Photo one", "Photo two", "Photo three"],
-//     technologiesUsed: ["CSS", "React"],
-//   },
-//   {
-//     projectname: "C",
-//     previewPhotos: ["Photo one", "Photo two", "Photo three"],
-//     technologiesUsed: ["React", "Tailwind"],
-//   },
-//   {
-//     projectname: "D",
-//     previewPhotos: ["Photo one", "Photo two", "Photo three"],
-//     technologiesUsed: ["Php"],
-//   },
-//   {
-//     projectname: "E",
-//     previewPhotos: ["Photo one", "Photo two", "Photo three"],
-//     technologiesUsed: ["Java"],
-//   },
-//   {
-//     projectname: "F",
-//     previewPhotos: ["Photo one", "Photo two", "Photo three"],
-//     technologiesUsed: ["Typescript"],
-//   },
-// ];
-
 const Projects = () => {
   console.log(data);
   const projects = data;
