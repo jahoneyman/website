@@ -1,20 +1,10 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const db = require("./config/db");
 require("dotenv").config();
 
-const cors = require("cors");
-
-app.use(
-  cors({
-    origin: ["http://localhost:3000", "https://johnhoneyman.netlify.app/"],
-  })
-);
-
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  next();
-});
+app.use(cors({ origin: "*", methods: ["GET", "POST"] }));
 
 app.use(express.json());
 
@@ -25,7 +15,10 @@ app.use(express.json());
 //   database: "portfolio",
 // });
 
-app.get("/", (req, res) => res.send("Welcome to our API service"));
+app.get("/", (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.send("Welcome to our API service");
+});
 
 app.get("/api/test", (req, res) => res.send("in /api/test"));
 
