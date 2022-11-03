@@ -19,24 +19,21 @@ const Connect = () => {
   const [loading, setLoading] = useState(false);
 
   const addMessage = (data) => {
-    console.log("entered here");
     axios
       .post("https://john-honeyman-db.herokuapp.com/api/create", {
-        // .post("http://localhost:5000/api/create", {
         firstName: data.firstName,
         lastName: data.lastName,
         email: data.email,
         phone: data.phone,
         message: data.message,
       })
-      .then((response) => {
+      .then(() => {
         setLoading(false);
         setSent(true);
         setTimeout(() => {
           setSent(false);
           reset();
         }, 5000);
-        console.log(response);
       })
       .catch((err) => {
         console.error(err);
@@ -46,11 +43,9 @@ const Connect = () => {
   };
 
   const onSubmit = (data) => {
-    console.log(data);
+    setLoading(true);
     addMessage(data);
   };
-
-  const onSubmitButton = () => setLoading(true);
 
   return (
     <div className="h-auto py-36 connect">
@@ -163,16 +158,15 @@ const Connect = () => {
             className="mr-auto bg-white text-black py-5 px-10 font-bold tracking-wider cursor-pointer transition ease-in-out duration-300 hover:py-6 hover:px-11"
             type="submit"
             value="Submit"
-            onClick={onSubmitButton}
           />
           <div
             className={`text-white font-bold tracking-wide ml-3 ${
               (!sent || !errorSent) && "hidden"
             }`}
           >
-            {sent && `Your e-mail has been sent! You'll be hearing from me soon. {":)"}`}
-            {errorSent && `There is an error in sending a message. Please try again later.`}
-            {loading && `Sending...`}
+            {sent ? `Your e-mail has been sent! You'll be hearing from me soon. :)` : ``}
+            {errorSent ? `There is an error in sending a message. Please try again later.` : ``}
+            {loading ? `Sending...` : ``}
           </div>
         </div>
       </form>

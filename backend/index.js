@@ -2,25 +2,13 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 
-app.use(cors({ origin: "https://johnhoneyman.netlify.app" }));
+app.use(cors({ origin: ["https://johnhoneyman.netlify.app", "https://localhost:3000"] }));
 
 const db = require("./config/db");
 
 require("dotenv").config();
 
 app.use(express.json());
-
-// const db = mysql.createConnection({
-//   user: "root",
-//   host: "localhost",
-//   password: "2018-08000",
-//   database: "portfolio",
-// });
-
-// app.get("/", (req, res) => {
-//   res.header("Access-Control-Allow-Origin", "*");
-//   res.send("Welcome to our API service");
-// });
 
 app.get("/api/test", (req, res) => res.send("in /api/test"));
 
