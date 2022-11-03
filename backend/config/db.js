@@ -9,5 +9,3 @@ const db = mysql.createConnection({
 });
 
 module.exports = db;
-
-// mysql://b6b1db6516c364:36e970de@us-cdbr-east-06.cleardb.net/heroku_d48940c9c944788?reconnect=true

@@ -1,8 +1,9 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
+const mysql = require("mysql");
 const db = require("./config/db");
-// require("dotenv").config();
+require("dotenv").config();
 
 const port = process.env.PORT || 5000;
 
@@ -18,8 +19,7 @@ app.use(express.json());
 
 app.get("/", (req, res) => res.send("Welcome to our API service"));
 
-app.post("/create", (req, res) => {
-  // console.log(req.body);
+app.post("/api/create", (req, res) => {
   const firstName = req.body.firstName;
   const lastName = req.body.lastName;
   const email = req.body.email;
@@ -39,7 +39,7 @@ app.post("/create", (req, res) => {
   );
 });
 
-app.get("/projects", (req, res) => {
+app.get("/api/projects", (req, res) => {
   db.query("SELECT * FROM projects", (err, result) => {
     if (err) {
       console.log(err);
