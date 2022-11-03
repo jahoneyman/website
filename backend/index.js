@@ -1,10 +1,12 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const db = require("./config/db");
-require("dotenv").config();
 
-app.use(cors({ origin: "*", methods: ["GET", "POST"] }));
+app.use(cors({ origin: "https://johnhoneyman.netlify.app" }));
+
+const db = require("./config/db");
+
+require("dotenv").config();
 
 app.use(express.json());
 
@@ -15,14 +17,14 @@ app.use(express.json());
 //   database: "portfolio",
 // });
 
-app.get("/", cors(), (req, res) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.send("Welcome to our API service");
-});
+// app.get("/", (req, res) => {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.send("Welcome to our API service");
+// });
 
-app.get("/api/test", cors(), (req, res) => res.send("in /api/test"));
+app.get("/api/test", (req, res) => res.send("in /api/test"));
 
-app.post("/api/create", cors(), (req, res) => {
+app.post("/api/create", (req, res) => {
   const firstName = req.body.firstName;
   const lastName = req.body.lastName;
   const email = req.body.email;
@@ -42,7 +44,7 @@ app.post("/api/create", cors(), (req, res) => {
   );
 });
 
-app.get("/projects", cors(), (req, res) => {
+app.get("/projects", (req, res) => {
   db.query("SELECT * FROM projects", (err, result) => {
     if (err) {
       console.log(err);
