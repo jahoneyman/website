@@ -2,13 +2,15 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 
-app.use(cors({ origin: ["https://johnhoneyman.netlify.app", "https://localhost:3000"] }));
+app.use(cors({ origin: ["https://johnhoneyman.netlify.app", "http://localhost:3000/"] }));
 
 const db = require("./config/db");
 
 require("dotenv").config();
 
 app.use(express.json());
+
+app.get("/", (req, res) => res.send("Welcome to the Honeyman API Services"));
 
 app.get("/api/test", (req, res) => res.send("in /api/test"));
 
