@@ -1,7 +1,8 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const connection = require("./config/db");
+const db = require("./config/db");
+// require("dotenv").config();
 
 const port = process.env.PORT || 5000;
 
@@ -18,7 +19,7 @@ app.use(express.json());
 app.get("/", (req, res) => res.send("Welcome to our API service"));
 
 app.post("/create", (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   const firstName = req.body.firstName;
   const lastName = req.body.lastName;
   const email = req.body.email;

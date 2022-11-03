@@ -1,25 +1,13 @@
 const mysql = require("mysql");
 require("dotenv").config();
 
-// const db = mysql.createConnection({
-//   host: "us-cdbr-east-06.cleardb.net/",
-//   user: "b27eb540dd0adf",
-//   password: "fa8fba3f",
-//   database: "heroku_cfcf6f50626285b",
-// });
+const db = mysql.createConnection({
+  host: "us-cdbr-east-06.cleardb.net/",
+  user: "b6b1db6516c364",
+  password: "36e970de",
+  database: "heroku_d48940c9c944788",
+});
 
-const connectionDetails = () => {
-  if (process.env.CLEAR_DATABASE_URL) {
-    return `${process.env.CLEAR_DATABASE_URL}`;
-  }
-  return {
-    database: `${process.env.DB}`,
-    host: `${process.env.DB_HOST}`,
-    user: `${process.env.DB_USER}`,
-    password: `${process.env.DB_USER_PASSWORD}`,
-  };
-};
+module.exports = db;
 
-const connection = mysql.createConnection(connectionDetails());
-
-module.exports = connection;
+// mysql://b6b1db6516c364:36e970de@us-cdbr-east-06.cleardb.net/heroku_d48940c9c944788?reconnect=true
