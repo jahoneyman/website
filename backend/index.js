@@ -15,14 +15,14 @@ app.use(express.json());
 //   database: "portfolio",
 // });
 
-app.get("/", (req, res) => {
+app.get("/", cors(), (req, res) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.send("Welcome to our API service");
 });
 
-app.get("/api/test", (req, res) => res.send("in /api/test"));
+app.get("/api/test", cors(), (req, res) => res.send("in /api/test"));
 
-app.post("/api/create", (req, res) => {
+app.post("/api/create", cors(), (req, res) => {
   const firstName = req.body.firstName;
   const lastName = req.body.lastName;
   const email = req.body.email;
@@ -42,7 +42,7 @@ app.post("/api/create", (req, res) => {
   );
 });
 
-app.get("/projects", (req, res) => {
+app.get("/projects", cors(), (req, res) => {
   db.query("SELECT * FROM projects", (err, result) => {
     if (err) {
       console.log(err);
