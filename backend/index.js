@@ -7,13 +7,16 @@ const cors = require("cors");
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: ["http://localhost:3000", "https://johnhoneyman.netlify.app/"],
   })
 );
 
-app.use(express.json());
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  next();
+});
 
-const port = process.env.PORT || 5000;
+app.use(express.json());
 
 // const db = mysql.createConnection({
 //   user: "root",
@@ -55,6 +58,8 @@ app.get("/projects", (req, res) => {
     }
   });
 });
+
+const port = process.env.PORT || 5000;
 
 app.listen(port, () => {
   console.log(`Server is listening to port: ${port}`);
