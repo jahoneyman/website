@@ -17,7 +17,7 @@ const Connect = () => {
   const [sent, setSent] = useState(false);
 
   const addMessage = (data) => {
-    Axios.post("http://localhost:3001/create", {
+    Axios.post("https://johnhoneyman-db.herokuapp.com/create", {
       firstName: data.firstName,
       lastName: data.lastName,
       email: data.email,
