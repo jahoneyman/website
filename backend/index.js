@@ -1,19 +1,19 @@
 const express = require("express");
 const app = express();
-const mysql = require("mysql");
 const cors = require("cors");
+const db = require("./config/db");
 
 const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
 
-const db = mysql.createConnection({
-  user: "root",
-  host: "localhost",
-  password: "2018-08000",
-  database: "portfolio",
-});
+// const db = mysql.createConnection({
+//   user: "root",
+//   host: "localhost",
+//   password: "2018-08000",
+//   database: "portfolio",
+// });
 
 app.get("/", (req, res) => res.send("Welcome to our API service"));
 
