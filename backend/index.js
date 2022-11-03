@@ -19,6 +19,8 @@ app.use(express.json());
 
 app.get("/", (req, res) => res.send("Welcome to our API service"));
 
+app.get("/api/test", (req, res) => res.send("in /api/test"));
+
 app.post("/api/create", (req, res) => {
   const firstName = req.body.firstName;
   const lastName = req.body.lastName;
@@ -39,7 +41,7 @@ app.post("/api/create", (req, res) => {
   );
 });
 
-app.get("/api/projects", (req, res) => {
+app.get("/projects", (req, res) => {
   db.query("SELECT * FROM projects", (err, result) => {
     if (err) {
       console.log(err);

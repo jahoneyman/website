@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Modal } from ".";
 
 import "../styles/project.css";
@@ -13,10 +13,6 @@ const Project = ({ content }) => {
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
   };
-
-  useEffect(() => {
-    console.log(modalActive);
-  }, [modalActive]);
 
   return (
     <>

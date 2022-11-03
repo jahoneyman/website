@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
-import Axios from "axios";
+import axios from "axios";
 
 import { SectionTitle } from "..";
 import "../../styles/connect.css";
@@ -17,15 +17,20 @@ const Connect = () => {
   const [sent, setSent] = useState(false);
 
   const addMessage = (data) => {
-    Axios.post("https://john-honeyman-db.herokuapp.com/api/create", {
-      firstName: data.firstName,
-      lastName: data.lastName,
-      email: data.email,
-      phone: data.phone,
-      message: data.message,
-    }).then((response) => {
-      console.log("success");
-    });
+    console.log("entered here");
+    axios
+      .post("https://john-honeyman-db.herokuapp.com/api/create", {
+        // .post("http://localhost:5000/api/create", {
+        firstName: data.firstName,
+        lastName: data.lastName,
+        email: data.email,
+        phone: data.phone,
+        message: data.message,
+      })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((err) => console.error(err));
   };
 
   const onSubmit = (data) => {

@@ -2,7 +2,6 @@ import { Project, SectionTitle } from "..";
 import data from "../../data";
 
 const Projects = () => {
-  console.log(data);
   const projects = data;
 
   return (
