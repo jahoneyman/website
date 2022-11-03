@@ -21,8 +21,8 @@ const Connect = () => {
   const addMessage = (data) => {
     console.log("entered here");
     axios
-      // .post("https://john-honeyman-db.herokuapp.com/api/create", {
-      .post("http://localhost:5000/api/create", {
+      .post("https://john-honeyman-db.herokuapp.com/api/create", {
+        // .post("http://localhost:5000/api/create", {
         firstName: data.firstName,
         lastName: data.lastName,
         email: data.email,
